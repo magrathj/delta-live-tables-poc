@@ -35,4 +35,4 @@ jobs:
       - name: Build binary wheel and a source tarball
         run: python src/dlt/setup.py sdist
       - name: Run unit tests
-        run: python -m pytest --cov=src/dlt tests/
+        run: python -m pytest  src/dlt/tests/
