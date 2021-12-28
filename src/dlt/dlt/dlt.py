@@ -8,7 +8,7 @@ def session():
                 .enableHiveSupport()
                 .getOrCreate()
             )
-    yield spark
+    return spark
 
 class dlt:
     """DLT wrapper to simulate dlt locally for development purposes"""
