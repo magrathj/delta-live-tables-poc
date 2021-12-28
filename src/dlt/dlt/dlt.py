@@ -1,4 +1,14 @@
 from functools import wraps
+from pyspark.sql import SparkSession
+
+def session():
+    spark = (SparkSession.builder
+                .master("local")
+                .appName("test-pyspark")
+                .enableHiveSupport()
+                .getOrCreate()
+            )
+    yield spark
 
 class dlt:
     """DLT wrapper to simulate dlt locally for development purposes"""
@@ -28,5 +38,6 @@ class dlt:
             return decorated                                          
         return decorator
     
-    def read(table):                            
+    def read(table): 
+        spark = session()                           
         return spark.read.table(table)
