@@ -38,4 +38,6 @@ jobs:
       - name: Build binary wheel and a source tarball for DQ Pipeline
         run: python src/libraries/data_quality_pipeline/setup.py sdist
       - name: Run unit tests
-        run: python -m pytest src/libraries/dlt/test/
+        run: |
+          python -m pytest src/libraries/dlt/test/
+          python -m pytest src/libraries/data_quality_pipeline/test/
