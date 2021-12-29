@@ -1,4 +1,4 @@
-from dlt import dlt
+from dlt import *
 from pyspark.sql.types import StructType,StructField, StringType, IntegerType
 
 def test_dlt_table(spark):
