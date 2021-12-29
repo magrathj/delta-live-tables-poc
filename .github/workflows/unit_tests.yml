@@ -34,8 +34,8 @@ jobs:
           pip install -r src/libraries/dlt/requirements.txt
           pip install -r src/libraries/data_quality_pipeline/requirements.txt
       - name: Build binary wheel and a source tarball for DLT
-        run: python src/dlt/setup.py sdist
+        run: python src/libraries/dlt/setup.py sdist
       - name: Build binary wheel and a source tarball for DQ Pipeline
-        run: python src/data_quality_pipeline/setup.py sdist
+        run: python src/libraries/data_quality_pipeline/setup.py sdist
       - name: Run unit tests
         run: python -m pytest 
